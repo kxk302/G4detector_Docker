@@ -34,6 +34,9 @@ RUN apt -y update && \
 # Copy the dataset folder
 ADD dataset /dataset
 
+# Copy scripts folder
+ADD scripts /scripts
+
 # Train G4detector on human dataset
 RUN cd ./G4detector && \
     python3 ./code/g4.py -p /dataset/pos_ex_K_125.fa -n /dataset/neg_ex_K_random_125.fa
